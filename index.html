@@ -70,7 +70,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             text-align: center;
-            margin-top: 5px; /* Space for the fixed navigation */
+            margin-top: 60px; /* Adjusted to be right under the navigation bar */
             max-width: 900px;
             position: relative; /* Relative positioning */
             align-self: center; /* Center the box horizontally */
@@ -125,7 +125,7 @@
             #content {
                 width: 90%;
                 padding: 15px;
-                margin-top: 100px;
+                margin-top: 60px; /* Adjusted for mobile */
             }
 
             p {
@@ -174,35 +174,30 @@
 
         <!-- Tab Content: Family Pictures -->
         <div id="family-pictures" class="tab-content">
-            <h2>Random Word: Harmony</h2>
-            <p>This section could showcase family pictures.</p>
+            <h1>Family Pictures</h1>
+            <p>Pictures will be added soon.</p>
         </div>
 
         <!-- Tab Content: Family Tree -->
         <div id="family-tree" class="tab-content">
-            <h2>Random Word: Adventure</h2>
-            <p>This section could display the Strickland family tree.</p>
+            <h1>Family Tree</h1>
+            <p>The family tree will be displayed here.</p>
         </div>
     </div>
 
     <script>
-        // Function to switch between tabs
-        function openTab(event, tabName) {
-            // Hide all tab content
-            var tabContent = document.getElementsByClassName("tab-content");
-            for (var i = 0; i < tabContent.length; i++) {
-                tabContent[i].style.display = "none";
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";  
             }
-
-            // Remove active class from all tab links
-            var tabLinks = document.querySelectorAll('nav ul li a');
-            for (var i = 0; i < tabLinks.length; i++) {
-                tabLinks[i].classList.remove("active");
+            tablinks = document.getElementsByTagName("a");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
-
-            // Show the selected tab and add active class to clicked tab link
-            document.getElementById(tabName).style.display = "block";
-            event.currentTarget.classList.add("active");
+            document.getElementById(tabName).style.display = "block";  
+            evt.currentTarget.className += " active";
         }
     </script>
 </body>
