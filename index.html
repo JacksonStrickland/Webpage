@@ -21,7 +21,6 @@
             display: flex;
             justify-content: center;
             margin-bottom: 20px;
-            cursor: pointer;
         }
         .tab {
             padding: 10px 20px;
@@ -29,6 +28,7 @@
             color: white;
             margin: 0 10px;
             border-radius: 5px;
+            cursor: pointer;
             transition: background-color 0.3s;
         }
         .tab:hover {
@@ -92,21 +92,15 @@
 
     <div id="familyPictures" class="tab-content">
         <h2>Family Pictures</h2>
-        <p id="randomWordPicture">Random Word: <span id="wordPicture"></span></p>
+        <p>Pictures of the family will be displayed here in the future.</p>
     </div>
 
     <div id="familyTree" class="tab-content">
         <h2>Family Tree</h2>
-        <p id="randomWordTree">Random Word: <span id="wordTree"></span></p>
+        <p>The family tree will be outlined here in the future.</p>
     </div>
 
     <script>
-        const randomWords = {
-            familyMembers: ["love", "unity", "bonding", "support", "heritage"],
-            familyPictures: ["laughter", "joy", "memories", "togetherness", "celebration"],
-            familyTree: ["branches", "roots", "growth", "legacy", "heritage"]
-        };
-
         function showTab(tabId) {
             const tabs = document.querySelectorAll('.tab-content');
             tabs.forEach(tab => {
@@ -114,18 +108,8 @@
             });
             const activeTab = document.getElementById(tabId);
             activeTab.classList.add('active');
-
-            if (tabId === 'familyPictures') {
-                document.getElementById('wordPicture').innerText = getRandomWord(randomWords.familyPictures);
-            } else if (tabId === 'familyTree') {
-                document.getElementById('wordTree').innerText = getRandomWord(randomWords.familyTree);
-            }
         }
-
-        function getRandomWord(words) {
-            return words[Math.floor(Math.random() * words.length)];
-        }
-
+        
         // Optional: You can add more interactivity with JavaScript here
         console.log("Welcome to The Stricklands' family page!");
     </script>
