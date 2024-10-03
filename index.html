@@ -80,12 +80,10 @@
             <h2 class="link" onclick="window.location.href='https://jacksonstrickland.github.io/Jackson-Grayson/'">Delila Strickland</h2>
             <p>Delila Strickland is the mother of two boys named Grayson and Jackson.</p>
         </div>
-
         <div class="family-member">
             <h2>Lila Strickland</h2>
             <p>Lila Strickland is the mother of Delila Strickland and grandmother of Grayson and Jackson.</p>
         </div>
-
         <div class="family-member">
             <h2>John Strickland</h2>
             <p>John Strickland is the father of Delila Strickland and the grandfather of Grayson and Jackson.</p>
@@ -94,15 +92,21 @@
 
     <div id="familyPictures" class="tab-content">
         <h2>Family Pictures</h2>
-        <p>Pictures will be displayed here in the future.</p>
+        <p id="randomWordPicture">Random Word: <span id="wordPicture"></span></p>
     </div>
 
     <div id="familyTree" class="tab-content">
         <h2>Family Tree</h2>
-        <p>The family tree will be outlined here in the future.</p>
+        <p id="randomWordTree">Random Word: <span id="wordTree"></span></p>
     </div>
 
     <script>
+        const randomWords = {
+            familyMembers: ["love", "unity", "bonding", "support", "heritage"],
+            familyPictures: ["laughter", "joy", "memories", "togetherness", "celebration"],
+            familyTree: ["branches", "roots", "growth", "legacy", "heritage"]
+        };
+
         function showTab(tabId) {
             const tabs = document.querySelectorAll('.tab-content');
             tabs.forEach(tab => {
@@ -110,6 +114,16 @@
             });
             const activeTab = document.getElementById(tabId);
             activeTab.classList.add('active');
+
+            if (tabId === 'familyPictures') {
+                document.getElementById('wordPicture').innerText = getRandomWord(randomWords.familyPictures);
+            } else if (tabId === 'familyTree') {
+                document.getElementById('wordTree').innerText = getRandomWord(randomWords.familyTree);
+            }
+        }
+
+        function getRandomWord(words) {
+            return words[Math.floor(Math.random() * words.length)];
         }
 
         // Optional: You can add more interactivity with JavaScript here
