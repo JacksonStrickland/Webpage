@@ -11,10 +11,10 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Align items at the start */
             flex-direction: column;
-            height: auto; /* Allow height to adjust for content */
+            align-items: center; /* Center all content */
+            height: auto;
+            background-color: #f4f4f4; /* Fallback background color */
         }
 
         /* Background for the main page only */
@@ -24,6 +24,7 @@
             background-position: center; /* Center the background */
             background-repeat: no-repeat; /* Prevent the image from repeating */
             min-height: 100vh; /* Ensure it takes full height */
+            width: 100%; /* Ensure it spans full width */
             position: relative; /* Position relative for absolute children */
             z-index: 1; /* Ensure the background is behind other content */
         }
@@ -72,7 +73,7 @@
 
         /* Main content area styling with solid white box */
         #content {
-            background-color: rgba(255, 255, 255, 1); /* Solid white background */
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent */
             width: 80%;
             padding: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -81,7 +82,6 @@
             margin-top: 60px; /* Adjusted to be right under the navigation bar */
             max-width: 900px;
             position: relative; /* Relative positioning */
-            align-self: center; /* Center the box horizontally */
             z-index: 2; /* Ensure the white box is above the background */
         }
 
@@ -135,7 +135,6 @@
                 width: 90%;
                 padding: 15px;
                 margin-top: 70px; /* Adjusted for mobile */
-                min-height: auto; /* Allow it to adjust based on content */
                 box-sizing: border-box; /* Ensure padding does not affect overall width */
             }
 
