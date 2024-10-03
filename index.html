@@ -14,7 +14,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
             flex-direction: column;
         }
 
@@ -63,12 +62,13 @@
         /* Main content area styling */
         #content {
             background-color: white;
-            width: 50%;
-            padding: 30px;
+            width: 80%;
+            padding: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             text-align: center;
-            margin-top: 80px; /* Adjusted to make space for the fixed nav bar */
+            margin-top: 80px;
+            max-width: 900px;
         }
 
         /* Tab content */
@@ -103,6 +103,44 @@
         a:hover {
             color: #388E3C;
             text-decoration: underline;
+        }
+
+        /* Media query for smaller devices (mobile phones and tablets) */
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            nav ul li a {
+                font-size: 16px;
+                padding: 10px 20px;
+            }
+
+            #content {
+                width: 90%;
+                padding: 15px;
+                margin-top: 100px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+        }
+
+        /* Media query for larger devices (laptops/desktops) */
+        @media (min-width: 769px) {
+            nav ul li {
+                margin-right: 30px;
+            }
+
+            #content {
+                width: 50%;
+            }
+
+            p {
+                font-size: 18px;
+            }
         }
     </style>
 </head>
