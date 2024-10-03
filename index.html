@@ -10,7 +10,6 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #ffffff; /* Default background */
             display: flex;
             justify-content: center;
             align-items: flex-start; /* Align items at the start */
@@ -25,6 +24,8 @@
             background-position: center; /* Center the background */
             background-repeat: no-repeat; /* Prevent the image from repeating */
             min-height: 100vh; /* Ensure it takes full height */
+            position: relative; /* Position relative for absolute children */
+            z-index: 1; /* Ensure the background is behind other content */
         }
 
         /* Navigation bar */
@@ -71,7 +72,7 @@
 
         /* Main content area styling with solid white box */
         #content {
-            background-color: rgba(255, 255, 255, 0.75); /* More transparent white */
+            background-color: rgba(255, 255, 255, 1); /* Solid white background */
             width: 80%;
             padding: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -81,7 +82,7 @@
             max-width: 900px;
             position: relative; /* Relative positioning */
             align-self: center; /* Center the box horizontally */
-            margin-top: 70px; /* Moved the box closer to the top */
+            z-index: 2; /* Ensure the white box is above the background */
         }
 
         /* Tab content */
@@ -134,7 +135,6 @@
                 width: 90%;
                 padding: 15px;
                 margin-top: 70px; /* Adjusted for mobile */
-                background-color: rgba(255, 255, 255, 0.65); /* Increased transparency on mobile */
                 min-height: auto; /* Allow it to adjust based on content */
                 box-sizing: border-box; /* Ensure padding does not affect overall width */
             }
@@ -171,28 +171,30 @@
     </nav>
 
     <!-- Main Content -->
-    <div id="content" class="main-background">
-        <!-- Tab Content: Family Members -->
-        <div id="family-members" class="tab-content">
-            <h1>The Stricklands</h1>
-            <h2>Delila Strickland</h2>
-            <p>Delila Strickland is the mother of two boys named <a href="https://jacksonstrickland.github.io/Jackson-Grayson/" target="_blank">Grayson and Jackson</a>.</p>
-            <h2>Lila Strickland</h2>
-            <p>Lila Strickland is the mother of Delila Strickland and grandmother of Grayson and Jackson.</p>
-            <h2>John Strickland</h2>
-            <p>John Strickland is the father of Delila Strickland and the grandfather of Grayson and Jackson.</p>
-        </div>
+    <div class="main-background">
+        <div id="content">
+            <!-- Tab Content: Family Members -->
+            <div id="family-members" class="tab-content">
+                <h1>The Stricklands</h1>
+                <h2>Delila Strickland</h2>
+                <p>Delila Strickland is the mother of two boys named <a href="https://jacksonstrickland.github.io/Jackson-Grayson/" target="_blank">Grayson and Jackson</a>.</p>
+                <h2>Lila Strickland</h2>
+                <p>Lila Strickland is the mother of Delila Strickland and grandmother of Grayson and Jackson.</p>
+                <h2>John Strickland</h2>
+                <p>John Strickland is the father of Delila Strickland and the grandfather of Grayson and Jackson.</p>
+            </div>
 
-        <!-- Tab Content: Family Pictures -->
-        <div id="family-pictures" class="tab-content">
-            <h1>Family Pictures</h1>
-            <p>Pictures will be added soon.</p>
-        </div>
+            <!-- Tab Content: Family Pictures -->
+            <div id="family-pictures" class="tab-content">
+                <h1>Family Pictures</h1>
+                <p>Pictures will be added soon.</p>
+            </div>
 
-        <!-- Tab Content: Family Tree -->
-        <div id="family-tree" class="tab-content">
-            <h1>Family Tree</h1>
-            <p>The family tree will be displayed here.</p>
+            <!-- Tab Content: Family Tree -->
+            <div id="family-tree" class="tab-content">
+                <h1>Family Tree</h1>
+                <p>The family tree will be displayed here.</p>
+            </div>
         </div>
     </div>
 
@@ -209,13 +211,6 @@
             }
             document.getElementById(tabName).style.display = "block";  
             evt.currentTarget.className += " active";
-
-            // Update body class based on the active tab
-            if (tabName === 'family-members') {
-                document.body.classList.add('main-background');
-            } else {
-                document.body.classList.remove('main-background');
-            }
         }
     </script>
 </body>
