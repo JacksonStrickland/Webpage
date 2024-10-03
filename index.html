@@ -4,7 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Stricklands</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General styling for body */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        /* Navigation bar */
+        nav {
+            background-color: #4CAF50;
+            padding: 15px;
+            text-align: center;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 30px;
+        }
+
+        nav ul li a {
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            padding: 8px 16px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a.active {
+            background-color: #388E3C;
+            border-radius: 5px;
+        }
+
+        nav ul li a:hover {
+            background-color: #45a049;
+            border-radius: 5px;
+        }
+
+        /* Main content area styling */
+        #content {
+            background-color: white;
+            width: 50%;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        /* Tab content */
+        .tab-content {
+            display: none;
+        }
+
+        #family-members {
+            display: block;
+        }
+
+        h1 {
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        p {
+            font-size: 18px;
+            color: #666;
+        }
+
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #388E3C;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation with tabs -->
@@ -30,18 +126,37 @@
         </div>
 
         <!-- Tab Content: Family Pictures -->
-        <div id="family-pictures" class="tab-content" style="display: none;">
+        <div id="family-pictures" class="tab-content">
             <h2>Random Word: Harmony</h2>
             <p>This section could showcase family pictures.</p>
         </div>
 
         <!-- Tab Content: Family Tree -->
-        <div id="family-tree" class="tab-content" style="display: none;">
+        <div id="family-tree" class="tab-content">
             <h2>Random Word: Adventure</h2>
             <p>This section could display the Strickland family tree.</p>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        // Function to switch between tabs
+        function openTab(event, tabName) {
+            // Hide all tab content
+            var tabContent = document.getElementsByClassName("tab-content");
+            for (var i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+
+            // Remove active class from all tab links
+            var tabLinks = document.querySelectorAll('nav ul li a');
+            for (var i = 0; i < tabLinks.length; i++) {
+                tabLinks[i].classList.remove("active");
+            }
+
+            // Show the selected tab and add active class to clicked tab link
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.classList.add("active");
+        }
+    </script>
 </body>
 </html>
