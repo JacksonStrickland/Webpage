@@ -17,6 +17,32 @@
             color: #2c3e50;
             margin-bottom: 30px;
         }
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        .tab {
+            padding: 10px 20px;
+            background-color: #2980b9;
+            color: white;
+            margin: 0 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .tab:hover {
+            background-color: #1f6391;
+        }
+        .tab-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .active {
+            display: block;
+            opacity: 1;
+        }
         h2 {
             color: #2980b9;
             margin-top: 20px;
@@ -43,22 +69,49 @@
 
     <h1>The Stricklands</h1>
 
-    <div class="family-member">
-        <h2 class="link" onclick="window.location.href='https://jacksonstrickland.github.io/Jackson-Grayson/'">Delila Strickland</h2>
-        <p>Delila Strickland is the mother of two boys named Grayson and Jackson.</p>
+    <div class="tabs">
+        <div class="tab" onclick="showTab('familyMembers')">Family Members</div>
+        <div class="tab" onclick="showTab('familyPictures')">Family Pictures</div>
+        <div class="tab" onclick="showTab('familyTree')">Family Tree</div>
     </div>
 
-    <div class="family-member">
-        <h2>Lila Strickland</h2>
-        <p>Lila Strickland is the mother of Delila Strickland and grandmother of Grayson and Jackson.</p>
+    <div id="familyMembers" class="tab-content active">
+        <div class="family-member">
+            <h2 class="link" onclick="window.location.href='https://jacksonstrickland.github.io/Jackson-Grayson/'">Delila Strickland</h2>
+            <p>Delila Strickland is the mother of two boys named Grayson and Jackson.</p>
+        </div>
+
+        <div class="family-member">
+            <h2>Lila Strickland</h2>
+            <p>Lila Strickland is the mother of Delila Strickland and grandmother of Grayson and Jackson.</p>
+        </div>
+
+        <div class="family-member">
+            <h2>John Strickland</h2>
+            <p>John Strickland is the father of Delila Strickland and the grandfather of Grayson and Jackson.</p>
+        </div>
     </div>
 
-    <div class="family-member">
-        <h2>John Strickland</h2>
-        <p>John Strickland is the father of Delila Strickland and the grandfather of Grayson and Jackson.</p>
+    <div id="familyPictures" class="tab-content">
+        <h2>Family Pictures</h2>
+        <p>Pictures will be displayed here in the future.</p>
+    </div>
+
+    <div id="familyTree" class="tab-content">
+        <h2>Family Tree</h2>
+        <p>The family tree will be outlined here in the future.</p>
     </div>
 
     <script>
+        function showTab(tabId) {
+            const tabs = document.querySelectorAll('.tab-content');
+            tabs.forEach(tab => {
+                tab.classList.remove('active');
+            });
+            const activeTab = document.getElementById(tabId);
+            activeTab.classList.add('active');
+        }
+
         // Optional: You can add more interactivity with JavaScript here
         console.log("Welcome to The Stricklands' family page!");
     </script>
