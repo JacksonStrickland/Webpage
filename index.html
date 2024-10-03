@@ -4,115 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Stricklands</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            color: #2c3e50;
-            margin-bottom: 30px;
-        }
-        .tabs {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-        .tab {
-            padding: 10px 20px;
-            background-color: #2980b9;
-            color: white;
-            margin: 0 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .tab:hover {
-            background-color: #1f6391;
-        }
-        .tab-content {
-            display: none;
-            opacity: 0;
-            transition: opacity 0.5s ease-in-out;
-        }
-        .active {
-            display: block;
-            opacity: 1;
-        }
-        h2 {
-            color: #2980b9;
-            margin-top: 20px;
-            cursor: pointer;
-        }
-        p {
-            font-size: 1.1em;
-            line-height: 1.5;
-            margin: 10px 0 20px 0;
-            padding: 15px;
-            border-left: 4px solid #2980b9;
-            background-color: #fff;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .link {
-            text-decoration: none;
-        }
-        .link:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Navigation bar with three tabs -->
+    <nav>
+        <ul>
+            <li><a href="#family-members" class="active" onclick="openTab('family-members')">Family Members</a></li>
+            <li><a href="#family-pictures" onclick="openTab('family-pictures')">Family Pictures</a></li>
+            <li><a href="#family-tree" onclick="openTab('family-tree')">Family Tree</a></li>
+        </ul>
+    </nav>
 
-    <h1>The Stricklands</h1>
-
-    <div class="tabs">
-        <div class="tab" onclick="showTab('familyMembers')">Family Members</div>
-        <div class="tab" onclick="showTab('familyPictures')">Family Pictures</div>
-        <div class="tab" onclick="showTab('familyTree')">Family Tree</div>
+    <!-- Tab Content: Family Members -->
+    <div id="family-members" class="tab-content">
+        <h1>The Stricklands</h1>
+        <h2>Delila Strickland</h2>
+        <p>Delila Strickland is the mother of two boys named <a href="https://jacksonstrickland.github.io/Jackson-Grayson/" target="_blank">Grayson and Jackson</a>.</p>
+        <h2>Lila Strickland</h2>
+        <p>Lila Strickland is the mother of Delila Strickland and grandmother of Grayson and Jackson.</p>
+        <h2>John Strickland</h2>
+        <p>John Strickland is the father of Delila Strickland and the grandfather of Grayson and Jackson.</p>
     </div>
 
-    <div id="familyMembers" class="tab-content active">
-        <div class="family-member">
-            <h2 class="link" onclick="window.location.href='https://jacksonstrickland.github.io/Jackson-Grayson/'">Delila Strickland</h2>
-            <p>Delila Strickland is the mother of two boys named Grayson and Jackson.</p>
-        </div>
-        <div class="family-member">
-            <h2>Lila Strickland</h2>
-            <p>Lila Strickland is the mother of Delila Strickland and grandmother of Grayson and Jackson.</p>
-        </div>
-        <div class="family-member">
-            <h2>John Strickland</h2>
-            <p>John Strickland is the father of Delila Strickland and the grandfather of Grayson and Jackson.</p>
-        </div>
+    <!-- Tab Content: Family Pictures -->
+    <div id="family-pictures" class="tab-content" style="display: none;">
+        <h2>Random Word: Tree</h2>
+        <p>This section could showcase family pictures.</p>
     </div>
 
-    <div id="familyPictures" class="tab-content">
-        <h2>Family Pictures</h2>
-        <p>Pictures of the family will be displayed here in the future.</p>
+    <!-- Tab Content: Family Tree -->
+    <div id="family-tree" class="tab-content" style="display: none;">
+        <h2>Random Word: Journey</h2>
+        <p>This section could display the Strickland family tree.</p>
     </div>
 
-    <div id="familyTree" class="tab-content">
-        <h2>Family Tree</h2>
-        <p>The family tree will be outlined here in the future.</p>
-    </div>
-
-    <script>
-        function showTab(tabId) {
-            const tabs = document.querySelectorAll('.tab-content');
-            tabs.forEach(tab => {
-                tab.classList.remove('active');
-            });
-            const activeTab = document.getElementById(tabId);
-            activeTab.classList.add('active');
-        }
-        
-        // Optional: You can add more interactivity with JavaScript here
-        console.log("Welcome to The Stricklands' family page!");
-    </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
