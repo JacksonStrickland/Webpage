@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Stricklands</title>
     <style>
-        /* General styling for body with background image */
+        /* General styling for body */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -15,7 +15,7 @@
             background-position: center; /* Center the background */
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Align items at the start */
             flex-direction: column;
             height: 100vh; /* Full height */
         }
@@ -62,15 +62,15 @@
             border-radius: 5px;
         }
 
-        /* Main content area styling with 50% transparency */
+        /* Main content area styling with solid white box */
         #content {
-            background-color: rgba(255, 255, 255, 0.5); /* 50% transparency */
+            background-color: rgba(255, 255, 255, 1); /* Solid white background */
             width: 80%;
             padding: 20px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             text-align: center;
-            margin-top: 80px;
+            margin-top: 80px; /* Space for the fixed navigation */
             max-width: 900px;
         }
 
