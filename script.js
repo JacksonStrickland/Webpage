@@ -1,18 +1,19 @@
 // Function to switch between tabs
-function openTab(tabName) {
+function openTab(event, tabName) {
     // Hide all tab content
-    var tabs = document.getElementsByClassName("tab-content");
-    for (var i = 0; i < tabs.length; i++) {
-        tabs[i].style.display = "none";
+    var i, tabContent, tabLinks;
+    tabContent = document.getElementsByClassName("tab-content");
+    for (i = 0; i < tabContent.length; i++) {
+        tabContent[i].style.display = "none";
     }
 
-    // Show the selected tab
+    // Remove active class from all tab links
+    tabLinks = document.querySelectorAll('nav ul li a');
+    for (i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].classList.remove("active");
+    }
+
+    // Show the selected tab and add active class to clicked tab link
     document.getElementById(tabName).style.display = "block";
-
-    // Update active class for tabs
-    var links = document.querySelectorAll('nav ul li a');
-    links.forEach(link => link.classList.remove('active'));
-    document.querySelector('a[href="#' + tabName + '"]').classList.add('active');
+    event.currentTarget.classList.add("active");
 }
-
-</html>
