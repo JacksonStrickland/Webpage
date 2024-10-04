@@ -5,17 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Stricklands</title>
     <style>
+        /* General styling for html and body */
+        html, body {
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+            width: 100%; /* Ensure full width */
+            overflow-x: hidden; /* Prevent horizontal overflow */
+            box-sizing: border-box; /* Include padding in width */
+        }
+
         /* General styling for body */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center; /* Center all content */
             height: auto;
             background-color: #f4f4f4; /* Fallback background color */
-            overflow-x: hidden; /* Prevent horizontal overflow */
         }
 
         /* Background for the main page only */
