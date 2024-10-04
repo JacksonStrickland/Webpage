@@ -27,6 +27,7 @@
             width: 100%; /* Ensure it spans full width */
             position: relative; /* Position relative for absolute children */
             z-index: 1; /* Ensure the background is behind other content */
+            padding-top: 60px; /* Add padding to prevent overlap with fixed nav */
         }
 
         /* Navigation bar */
@@ -36,7 +37,7 @@
             text-align: center;
             width: 100%;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            position: fixed;
+            position: fixed; /* Make nav fixed */
             top: 0;
             left: 0;
             z-index: 1000;
@@ -79,7 +80,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             text-align: center;
-            margin-top: 60px; /* Adjusted to be right under the navigation bar */
+            margin-top: 20px; /* Adjusted to be right under the navigation bar */
             max-width: 900px;
             position: relative; /* Relative positioning */
             z-index: 2; /* Ensure the white box is above the background */
@@ -136,12 +137,20 @@
             #content {
                 width: 90%;
                 padding: 15px;
-                margin-top: 70px; /* Adjusted for mobile */
+                margin-top: 20px; /* Adjusted for mobile */
                 box-sizing: border-box; /* Ensure padding does not affect overall width */
             }
 
+            h1 {
+                font-size: 24px; /* Smaller title on mobile */
+            }
+
+            h2 {
+                font-size: 20px; /* Smaller headings on mobile */
+            }
+
             p {
-                font-size: 16px;
+                font-size: 16px; /* Smaller paragraphs on mobile */
             }
         }
 
